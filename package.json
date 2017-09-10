@@ -2,7 +2,10 @@
   "name": "react-redux-starter",
   "version": "0.0.1",
   "description": "Starter kit for React and Redux",
-  "scripts": {},
+  "scripts": {
+    "prestart": "babel-node tools/startMessage.js",
+    "start": "babel-node tools/srcServer.js"
+  },
   "author": "Codetaha",
   "license": "MIT",
   "dependencies": {
