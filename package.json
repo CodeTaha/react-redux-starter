@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Starter kit for React and Redux",
   "scripts": {},
-  "author": "Cory House",
+  "author": "Codetaha",
   "license": "MIT",
   "dependencies": {
     "babel-polyfill": "6.8.0",
