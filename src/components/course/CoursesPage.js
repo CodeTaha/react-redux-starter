@@ -11,7 +11,7 @@ class CoursesPage extends React.Component {
     super(props, context);
   }
 
-  static courseRow(course, index) {
+  courseRow(course, index) {
     return <div key={index}>{course.title}</div>;
   }
 
