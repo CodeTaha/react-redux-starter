@@ -54,9 +54,20 @@ ManageCoursePage.contextTypes = {
   router: PropTypes.object
 };
 
+function getCourseById(courses, id) {
+  const course = courses.filter(course => course.id == id);
+  if (course) return course[0]; // Filter returns and array, so have to grab the first
+  return null;
+}
+
 function mapStateToProps(state, ownProps) {
+  const courseId = ownProps.params.id; // from the path `/course/:id`
   let course = {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''};
 
+  // The second cond in if checks if loading of courses is completed on page load
+  if (courseId && state.courses.length > 0) {
+    course = getCourseById(state.courses, courseId);
+  }
   const authorsFormattedForDrpdown = state.authors.map(author => {
     return {
       value: author.id,
